@@ -29,6 +29,10 @@ const main = async ({ days }: { days ?: number }) => {
     console.table(events.map(formatEvent).filter(Boolean));
 };
 
-void main({
-    days: parseInt(process.argv[2] ?? 1)
-});
+const days = parseInt(process.argv[2] ?? 1);
+
+if (isNaN(days)) {
+    throw new Error('Parameter 1 (days) is not an integer');
+}
+
+void main({ days: days });
