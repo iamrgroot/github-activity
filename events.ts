@@ -5,6 +5,7 @@ import {
     BranchEvent,
     ReviewEvent,
     EventType,
+    ReleaseEvent,
 } from './types'
 import { nl } from 'date-fns/locale';
 import { format } from 'date-fns';
@@ -48,6 +49,11 @@ export const formatEvent = (event: EventType): Actitivy|null => {
             payload = (event.payload as ReviewEvent);
             action = 'pr comment';
             reference = payload.pull_request.title;
+            break;
+        case 'ReleaseEvent':
+            payload = (event.payload as ReleaseEvent);
+            action = 'released';
+            reference = payload.release.tag_name;
             break;
         case 'WatchEvent':
             return null;

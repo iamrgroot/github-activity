@@ -21,4 +21,7 @@ export type ReviewEvent = EventType & {
 export type IssueEvent = EventType & {
     issue: components["schemas"]["issue"]
 }
-export type BranchEvent =EventType &  components["schemas"]["git-ref"];
+export type BranchEvent = EventType &  components["schemas"]["git-ref"];
+export type ReleaseEvent = EventType & {
+    release: components["schemas"]["release"]
+};
