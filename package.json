@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "@octokit/rest": "^19.0.7",
+    "@types/parse-link-header": "^2.0.1",
     "date-fns": "^2.29.3",
     "esno": "^0.16.3",
+    "parse-link-header": "^2.0.0",
     "ts-dotenv": "^0.9.1"
   },
   "devDependencies": {
