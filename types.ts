@@ -25,3 +25,6 @@ export type BranchEvent = EventType &  components["schemas"]["git-ref"];
 export type ReleaseEvent = EventType & {
     release: components["schemas"]["release"]
 };
+export type GollumEvent = EventType & {
+    pages: components["schemas"]["webhook-gollum"]["pages"],
+}

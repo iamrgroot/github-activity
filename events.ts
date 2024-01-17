@@ -6,6 +6,7 @@ import {
     ReviewEvent,
     EventType,
     ReleaseEvent,
+    GollumEvent,
 } from './types'
 import { nl } from 'date-fns/locale';
 import { format } from 'date-fns';
@@ -61,6 +62,11 @@ export const formatEvent = (event: EventType): Actitivy|null => {
             return null;
         case 'ForkEvent':
             return null;
+        case 'GollumEvent':
+            payload = (event.payload as GollumEvent);
+            action = 'wiki push';
+            reference = event.repo.name;
+            break;
         default:
             console.log(event);
     }
